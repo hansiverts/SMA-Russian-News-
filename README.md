@@ -9,7 +9,7 @@ _Social Media Analysis / Group Project Submission / Thursday 8 May 2025_
 
 Russia is famous for its hybrid operations, particularly in the informational space. The country targets audiences inside and outside its borders to manipulate public opinion, and to strengthen support for its government's actions. These narratives are often described as 'propaganda', as they serve to shape the public perception of government policy. In this project, we have looked at a specific kind of propaganda, namely, that which seeks to justify Russia's invasion of Ukraine in 2022 and its ongoing occupation of Eastern Ukrainian regions.
 
-Following the occupation and annexation of Crimea, Russia's rhetoric started to shift. The tone of communication with foreign partners evolved, growing more assertive and more overtly revisionist. Following the Ukraine War's outbreak in 2022, a number of false claims have been developed, distributed, and propagated to justify Russia's invastion of its neighbour (Seskuria, 2022):
+Following the occupation and annexation of Crimea, Russia's rhetoric started to shift. The tone of communication with foreign partners evolved, growing more assertive and more overtly revisionist. Following the Ukraine War's outbreak in 2022, a number of false claims have been developed, distributed, and propagated to justify Russia's invastion of its neighbour:
 
 - Ukraine is not a sovereign state, but part of a greater Russian civilisation.
 - Ukraine is ruled by Nazis, and must be 'denazified' and 'demilitarised'.

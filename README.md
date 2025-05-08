@@ -58,7 +58,7 @@ In order to establish that the dataset was indeed readable and that the Russian 
   телефонного -> телефонный
 ```
 
-We also created a cell of code to randomly pick five control words from the corpus to serve as examples of how words unrelated to our research question appears in the corpus.
+We also created a cell of code to randomly pick five control words from the corpus to serve as examples of how words unrelated to our research question appear in the corpus.
 
 ```
 import random

@@ -25,10 +25,10 @@ Importantly, 'disinformation', a term now global in its use, was already promine
 ## The Dataset
 The choice of dataset was driven by our intent to understand the development of Russian official rhetoric. The corpus of Russian-language MFA news items covers the period from January 2, 2003, to December 31, 2023, with a total of 56,203 articles. 
 
-### We'll build one record per row/document
-records = []
-
-for row_index, (nlpdoc, date) in enumerate(zip(documents_nlp, df['date'])):
+  ### We'll build one record per row/document
+  records = []
+  
+  for row_index, (nlpdoc, date) in enumerate(zip(documents_nlp, df['date'])):
     # 1) total "words" = count of non-punct, non-space tokens
     total_words = sum(1 for tok in nlpdoc if not (tok.is_punct or tok.is_space))
     
@@ -45,9 +45,9 @@ for row_index, (nlpdoc, date) in enumerate(zip(documents_nlp, df['date'])):
         **counts
     }
     records.append(rec)
-
- # 4) turn into DataFrame and sum up by Date
- daily = (
+    
+  # 4) turn into DataFrame and sum up by Date
+  daily = (
     pd.DataFrame(records)
       .groupby('Date', as_index=False)
       .sum()

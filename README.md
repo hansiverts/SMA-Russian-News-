@@ -23,9 +23,6 @@ Importantly, 'disinformation', a term now global in its use, was already promine
 
 
 ## The Dataset
-The choice of dataset was driven by our intent to understand the development of Russian official rhetoric. The corpus of Russian-language MFA news items covers the period from January 2, 2003, to December 31, 2023, with a total of 56,203 articles. 
+The choice of dataset was driven by our intent to understand the development of Russian official rhetoric. The corpus of Russian-language MFA news items covers the period from January 2, 2003, to December 31, 2023, with a total of 56,203 articles.
 
- # 5) export
- daily.to_csv('daily_lemma_counts.csv', index=False)
- 
- print(daily.head())
+[Figure #1](/Control words 2013-2023.png)

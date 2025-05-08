@@ -93,6 +93,7 @@ Initially, we used the matplotlib library to visualize the results of our word c
   records = []
   
   for row_index, (nlpdoc, date) in enumerate(zip(documents_nlp, df['date'])):
+
   # 1) total "words" = count of non-punct, non-space tokens
   total_words = sum(1 for tok in nlpdoc if not (tok.is_punct or tok.is_space))
   

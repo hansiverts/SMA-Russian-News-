@@ -48,12 +48,9 @@ The following section goes through the results produced through this pipeline. T
 ![control](https://github.com/hansiverts/SMA-Russian-News-/blob/main/Control%20words%202013-2023.png)
 _Green = 'effectiveness' / Blue = 'particularity' / Brown = 'prohibition' / Purple = 'placement' / Yellow = 'appearance'_
 
+This illustration shows selected control words, giving us an idea of what patterns are produced by typical words in this datset. The control words depicted here are not considered politically loaded, and are not known to be subject to manipulation by the Russian government. Consider this the baseline against which politically sensitive keywords should be compared.
 
-
-Finding I: Control words
-
-The graph depicts the frequency of control words for the corpus. The words are unrelated to the research question and are the following: “effectiveness” in green, “particularity” in blue, “prohibition” in brown, “placement” in purple, and “appearance” in yellow. The terms do not follow any particular pattern and cannot be tied to specific events. The term “particularly” occurs much more frequently compared to other words, while “prohibition” peaks in 2013 and 2018, possibly tied to regulation which was discussed in the MFA news items. The patterns of these terms show that they are not tied to the 2022 full-scale invasion, providing a robust control for the research methodology. 
-
+---
 
 Finding II: Disinformation
 

@@ -1,11 +1,7 @@
 # Justifying War: Word Frequency Analysis and Russia's Changing Narrative on Ukraine
 _Social Media Analysis / Group Project Submission / Thursday 8 May 2025_
 
-  _Contributors: 
-  Tom-Erik Liljeroth FOSEID
-  Barbara KUZA-TARKOWSKA
-  Hans Iver Traaseth SKOGVANG
-  Mariia VAKULIK_
+  _Contributors: Tom-Erik Liljeroth FOSEID, Barbara KUZA-TARKOWSKA, Hans Iver Traaseth SKOGVANG, Mariia VAKULIK_
 
 ## Introduction
 

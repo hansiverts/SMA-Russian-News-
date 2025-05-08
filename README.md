@@ -29,18 +29,73 @@ Importantly, 'disinformation', a term now global in its use, was already promine
 
 
 ## The Dataset
-The choice of dataset was driven by our intent to understand the development of Russian official rhetoric. The corpus of Russian-language MFA news items covers the period from January 2, 2003, to December 31, 2023, with a total of 56,203 articles.
-
-  **Hans Iver to Write This**
+The choice of dataset was driven by our intent to understand the development of Russian official rhetoric. While we initally struggled with finding a fitting dataset – initially failing to produce interesting results from a 1000-article Factiva dataset – we eventually discovered a comprehensive dataset of all Russian language news items published on the Russian Ministry of Foreign Affairs webpage. The dataset, retrievable from [this link](https://tadadit.xyz/datasets/2024/russian_institutions_2024/mid.ru_ru_2024/), was compiled by researched Giorgio Comai as part of a research project supported by the Italian Ministry of Foreign Affairs. The full corpus covers the period from January 2, 2003, to December 31, 2023, with a total of 56,203 articles. A corresponding dataset of English language Russian MFA news items is also available, but is significantly smaller and therefore inferior to the Russian language corpus. 
 
 
 
 ## The Code
 
-  **Hans Iver to Write This**
+The code involved in running Spacy’s Natural Language Processing (NLP) - while simple - has gone through many iterations. Initially, the code processed the entire dataset of 56,203 articles, totalling over 20 million words – a volume of data that led to some computational problems. Simply running the NLP pipeline took multiple hours, even though we used the smallest Russian language pipeline offered in the Spacey library (ru_core_news_md). For every time the Python kernel stopped, this process needed to be restarted, causing the time involved in exploring the dataset and tinkering with the code to draw out significantly. 
 
+To address this, we attempted to use the in-built pickle module that comes with Python. Given that it produced a 14 gigabyte .pkl file that then required a multi-hour process to be unpacked on every run of the Python kernel, the issue was only exacerbated. Moreover, it led to a sequence of errors in the rest of the code, producing yet another headache. In sum, pickling created more issues than it solved.
 
+A more practical solution was reached when we simply decided to trim the dataset temporally, removing data rows from before 2013. For the purposes of our project, we didn’t need the data in the preceding decade. This virtually cut the data volume in half – drastically reducing processing time – allowing us to finally begin exploring the data. In the end, our dataset spans 28,706 individual articles and 14,004,206 words.
 
+In order to establish that the dataset was indeed readable and that the Russian NLP pipeline had successfully lemmatized and tokenized the data, the finished code contains multiple lines designed to verify this. Lemmatizing is a process that is particularly important given the morphology of the Russian language, in which one can find upwards of 30 inflections (variations) of a single word. Faulty lemmatizing could therefore provide a drastically lower count of our candidate words. As demonstrated in the following code output, this was done successfully. 
+
+```
+  for token in nlp_doc[:10]:
+      print (token,'->',token.lemma_)
+  СООБЩЕНИЕ -> сообщение
+  ДЛЯ -> для
+  СМИ -> сми
+  В -> в
+  ходе -> ход
+  состоявшегося -> состояться
+  12 -> 12
+  марта -> март
+  телефонного -> телефонный
+```
+
+We also created a cell of code to randomize five candidate words.
+
+Initially, we used the matplotlib library to visualize the results of our word count and verify the credibility of our code. However, given that we wanted to produce more visually appealing results, the final code skips this step. Instead, we perform the word count lookup of our lemmatized candidate nouns (to avoid discrepancy between the candidate word and the corresponding lemma), index these on a per-day basis (giving us the sum of candidate word counts per day), and then export these to a .csv file.
+```
+  import pandas as pd
+  
+  # --- PARAMETERS: your list of lemmas (all lowercase) ---
+  target_lemmas = [nlp(word)[0].lemma_.lower() for word in ['денацификация','демилитаризация', 'бандеровцы', 'англосаксы', 'биолаборатории',\
+  'русофобия', 'прокси', 'соотечественников', 'геноцид', 'нацбаты', 'укронацисты',\
+  'марионетка', 'референдум', 'освободители', 'бандеризация', 'дезинформация',\
+  'воссоединение', 'империалистический','деколонизация', 'спецоперация', 'СВО', 'война',\
+  'терроризм', 'вторжение', 'нападение', 'защита',\
+  'эффективность', 'частность', 'запрещение', 'размещение', 'проявление']]
+  records = []
+  
+  for row_index, (nlpdoc, date) in enumerate(zip(documents_nlp, df['date'])):
+  # 1) total "words" = count of non-punct, non-space tokens
+  total_words = sum(1 for tok in nlpdoc if not (tok.is_punct or tok.is_space))
+  
+  # 2) count each target lemma in this doc
+  counts = {  f'Count of {lemma}': sum(1 for tok in nlpdoc if tok.lemma_.lower() == lemma)
+  for lemma in target_lemmas }
+  
+  # 3) assemble the record
+  rec = {  'Date': pd.to_datetime(date).date(),
+  'Total words': total_words,
+  **counts }
+  records.append(rec)
+  
+  # 4) turn into DataFrame and sum up by Date
+  daily = (  pd.DataFrame(records)
+  .groupby('Date', as_index=False)
+  .sum() )
+  
+  # 5) export
+  daily.to_csv('daily_lemma_counts.csv', index=False)
+  print(daily.head())
+```
+  
 ## Findings!
 The following section goes through the results produced through this pipeline. The finished code can count occurences for any set of keywords, but for reasons of space and time we will only consider a small selection here. The primary goal of this section is to demonstrate that our methodology yielded reasonable results, and that they do add empirical clarity to our research question. Therefore, we have chosen not to reproduce the source tables for these visualisations, directing the reader instead to the code above which may reproduce them if required.
 

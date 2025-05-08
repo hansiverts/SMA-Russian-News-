@@ -46,6 +46,8 @@ In order to establish that the dataset was indeed readable and that the Russian 
 ```
   for token in nlp_doc[:10]:
       print (token,'->',token.lemma_)
+
+#OUTPUT:
   СООБЩЕНИЕ -> сообщение
   ДЛЯ -> для
   СМИ -> сми

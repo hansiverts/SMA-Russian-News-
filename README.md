@@ -22,9 +22,9 @@ The aim of this project is to explore the reach of Russian propaganda quantitati
 
 
 ## Political background
-Russia’s information warfare doesn’t rely on improvisation. It’s an engineered system of linguistic manipulation aimed at shaping perception as much as battlefield outcomes. It’s a core function of governance, a system where language is policy, and narrative control is as strategic as territorial control. This is not just about censorship or spin; it’s about constructing an internally coherent version of reality, calibrated to insulate the public from the contradictions of government. In this model, propaganda isn't a tool of last resort, but a primary instrument of statecraft. It blurs war and peace, domestic and foreign, fiction and fact, so that the Kremlin can act freely, whilst society remains oriented around a logic that only exists within its carefully managed echo chamber.
+Propaganda, in its simplest form defined as “the management of collective attitudes by the manipulation of significant symbols” (Lasswell, 1927, p. 627), comes in many different forms. It can be oriented towards foreign powers as a tool of policy legitimization, or to domestic audiences, to shape their perception of the competency and image of the polity’s leader.
 
-Importantly, 'disinformation', a term now global in its use, was already prominent in Russia’s internal discourse due to COVID-19 and international backlash. Ironically, it became a shield for the Kremlin itself, as Russian officials pre-emptively dismissed warnings about their own war plans as 'Western disinformation'. Propaganda, in this case, is not just noise. It’s a methodical attempt to construct an alternate reality in which Russia is always the victim, always justified, and always at war, not just with Ukraine, but with Western Europe and the United States. Our project reveals that the Kremlin's narrative is not chaotic, but deliberate - reactive to global and domestic events.
+Russia enjoys a rich and eventful history of such ‘management’, and its recent campaigns in the informational space are generally well-documented. Some researchers even dare to think quantitatively: Alieva et al. (2024), for example, uses natural language processing methods to analyse the dissemination of misinformation relating to supposed Western and Ukrainian neonazism on Twitter. In the same vein, Lai et al. and Miskimmon (2024, 2017) employ these techniques in the Ukrainian context, examining the spread of Russian narratives of purported biological weapons labs in Ukraine, among other conspiracy theories relating to Western involvement in Ukrainian domestic affairs. They look to the 2013-2014 Euromaidan protests, the annexation of Crimea, and the intensification of hybrid measures in the informational domain leading up to the 2022 invasion of the country by Russia.
 
 
 
@@ -169,5 +169,16 @@ The clearest weakness in our project, as we see it, is our method for choosing t
 
 In summary, we have indicated that Russian narratives are carefully calibrated from official sources, and that these narratives evolve alongside military and political developments. This communication strategy is part of a wider campaign of repression and manipulation at home – and operations in the informational domain abroad. We have shown that even basic word frequency analysis can add to our understanding of such campaigns – more than what a qualitative account would achieve. That said, we also realise that the subject matter is fiendishly complex, and that complete interpretation of our findings is very challenging. Why do keywords disappear after their peaks, and what patterns do they follow? What would the same keywords across different platforms look like? Would word embedding help us differentiate between ‘neutral’ and ‘loaded’ instances of keywords with many uses? If nothing else, the process has taught us a lot about the tools and techniques available to us as researchers, and has made us think a lot about how a similar methodology might be used in more ambitious projects in the future.
 
+
+
+### Additional references
+
+Alieva, I., Kloo, I., & Carley, K. M. (2024). ‘Analyzing Russia’s propaganda tactics on Twitter using mixed methods network analysis and natural language processing: a case study of the 2022 invasion of Ukraine’, EPJ Data Science, 13(1).
+
+Lasswell, H. D. (1927). The theory of political propaganda. American Political Science Review, 21, 627–631. https://doi.org/10.2307/1945515
+
+Lai, C., Toriumi, F. and Yoshida, M. (2024) ‘A multilingual analysis of pro Russian misinformation on Twitter during the Russian invasion of Ukraine’, Nature, 14(10155). Available at: https://www.nature.com/articles/s41598-024-60653-y.
+
+Miskimmon, A. and O’Loughlin, B. (2017). ‘Russia’s Narratives of Global Order: Great Power Legacies in a Polycentric World’, Politics and Governance, 5(3), pp. 111–120.
 
 

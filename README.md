@@ -29,7 +29,7 @@ Importantly, 'disinformation', a term now global in its use, was already promine
 
 
 ## The Dataset
-The choice of dataset was driven by our intent to understand the development of Russian official rhetoric. While we initally struggled with finding a fitting dataset – initially failing to produce interesting results from a 1000-article Factiva dataset – we eventually discovered a comprehensive dataset of all Russian language news items published on the Russian Ministry of Foreign Affairs webpage. The dataset, retrievable from [this link](https://tadadit.xyz/datasets/2024/russian_institutions_2024/mid.ru_ru_2024/), was compiled by researched Giorgio Comai as part of a research project supported by the Italian Ministry of Foreign Affairs. The full corpus covers the period from January 2, 2003, to December 31, 2023, with a total of 56,203 articles. A corresponding dataset of English language Russian MFA news items is also available, but is significantly smaller and therefore inferior to the Russian language corpus. 
+The choice of dataset was driven by our intent to understand the development of Russian official rhetoric. While we initally struggled with finding a fitting dataset – initially failing to produce interesting results from a 1000-article Factiva dataset – we eventually discovered a comprehensive dataset of all Russian language news items published on the Russian Ministry of Foreign Affairs webpage. The dataset, retrievable from [this link](https://tadadit.xyz/datasets/2024/russian_institutions_2024/mid.ru_ru_2024/), was compiled by researcher Giorgio Comai as part of a project supported by the Italian Ministry of Foreign Affairs. The full corpus covers the period from January 2, 2003, to December 31, 2023, with a total of 56,203 articles. A corresponding dataset of English language Russian MFA news items is also available, but is significantly smaller than the Russian language corpus. Given the group's strong familiarity with Russian language, we therefore instinctively chose the latter. 
 
 
 
@@ -57,7 +57,25 @@ In order to establish that the dataset was indeed readable and that the Russian 
   телефонного -> телефонный
 ```
 
-We also created a cell of code to randomize five candidate words.
+We also created a cell of code to randomly pick five candidate words from the corpus to serve as examples of how words unrelated to our research question appears in the corpus.
+
+```
+import random
+from collections import Counter
+
+# Count all lemmatized nouns in the corpus
+noun_counts = Counter(
+    token.lemma_.lower() for doc in documents_nlp for token in doc if token.pos_ == "NOUN"
+)
+
+# Filter lemmatized nouns with at least 4 characters and occurring at least 1000 times
+filtered_nouns = [noun for noun, count in noun_counts.items() if len(noun) >= 4 and count >= 1000]
+
+# Randomly select 5 lemmatized nouns from the filtered list
+random_nouns = random.sample(filtered_nouns, 5)
+
+print(random_nouns)
+```
 
 Initially, we used the matplotlib library to visualize the results of our word count and verify the credibility of our code. However, given that we wanted to produce more visually appealing results, the final code skips this step. Instead, we perform the word count lookup of our lemmatized candidate nouns (to avoid discrepancy between the candidate word and the corresponding lemma), index these on a per-day basis (giving us the sum of candidate word counts per day), and then export these to a .csv file.
 ```

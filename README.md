@@ -1,4 +1,4 @@
-**Justifying Propaganda**
+# Justifying Propaganda
 
 Test
 Headline 1

@@ -5,6 +5,11 @@ _Social Media Analysis / Group Project Submission / Thursday 8 May 2025_
 
 ## Introduction
 
+Russia is famous for its hybrid operations, particularly in the informational space. The country targets audiences inside and outside its borders to manipulate public opinion, and to strengthen support for its government's actions. These narratives are often described as 'propaganda', as they serve to shape the public perception of government policy. In this project, we have looked at a specific kind of propaganda, namely, that which seeks to justify Russia's invasion of Ukraine in 2022 and its ongoing occupation of Eastern Ukrainian regions.
+
+
+
+
 The Russian Federation is infamous for its rigorous propaganda techniques, effectively targeting both internal and external audiences. Russian rhetoric began to shift following the annexation of Crimea and intensified significantly after the full-scale invasion of Ukraine. Between these two points in time, the tone of communication with foreign partners evolved, moving into increasingly hostile territory, pulling no punches. Today, disinformation and propaganda narratives serve as key justifications for Russian aggression (Seskuria, 2022).
 According to scholars (ibid), the main narratives of Russian propaganda - disseminated across the entire media ecosystem, including by state officials, state-controlled outlets, and even trolls and bots - since 2022 have been:
 • Ukraine as a Nazi state that must be “demilitarized” and “denazified”,
